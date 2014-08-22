@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <link rel="stylesheet" href="~/Content/css/boot.css" />
+    <link rel="stylesheet" href="~/Content/css/_styles.css" />
+    
+
+</head>
+<body>
+
+    <div class="row">
+        <div class="col-lg-12">
+
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div id="wizard" data-active="1">
+
+                    <div class="wizard-content">
+                        <div class="well" id="step1">
+                            <div class="row">
+
+
+                                <div class="col-md-3">
+                                    <label for="CustomObjects">Object Label</label> <br />
+                                    <input type="hidden" id="CustomObjects" name="CustomObjects" />
+                                    <select id="CustomObject" class="form-control"></select>
+                                    <input id="CustomObjectss" />
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="list-group">
+                                            <br />
+                                            <a class="list-group-item" data-filter="Table">
+                                                <div class="col-md-2"><input type="radio" name="cfType" data-name="Table" value="1" /> Table</div> <div class="text-danger"><small> Users can insert any character up to 250 characters.</small></div>
+                                            </a>
+                                            <a class="list-group-item" data-filter="Text">
+                                                <div class="col-md-2"><input type="radio" name="cfType" data-name="Text" value="2" /> Text</div> <div class="text-danger"><small> Users can insert any character up to 30000 characters. </small></div>
+                                            </a>
+                                            <a class="list-group-item" data-filter="Date">
+                                                <div class="col-md-2"><input type="radio" name="cfType" data-name="Date" value="3" /> Date</div> <div class="text-danger"><small> Users can insert number.</small></div>
+                                            </a>
+                                            <a class="list-group-item" data-filter="DateTime">
+                                                <div class="col-md-2"><input type="radio" name="cfType" data-name="DateTime" value="3" /> DateTime</div> <div class="text-danger"><small> Users can insert number.</small></div>
+                                            </a>
+                                            <a class="list-group-item" data-filter="Number">
+                                                <div class="col-md-2"><input type="radio" name="cfType" data-name="Number" value="3" /> Number</div> <div class="text-danger"><small> Users can insert number.</small></div>
+                                            </a>
+                                            <a class="list-group-item" data-filter="Phone">
+                                                <div class="col-md-2"><input type="radio" name="cfType" data-name="Phone" value="3" /> Phone</div> <div class="text-danger"><small> Users can insert number.</small></div>
+                                            </a>
+                                            <br />
+                                            <br />
+                                            <button class="wizard-next">Next<i class="fa fa-angle-double-right "></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+            <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+            <script src="~/Scripts/app.js"></script>
+</body>

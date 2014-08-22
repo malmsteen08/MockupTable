@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "InsertField";
+}
+
+<head>
+    <link rel="stylesheet" href="~/Content/css/boot.css" />
+    <link rel="stylesheet" href="~/Content/css/_styles.css" />
+
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-12">
+
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div id="wizard" data-active="1">
+
+                        <div class="wizard-content">
+                            <div data-step="2" class="wizard-step">
+                                <div class="well" id="step2">
+                                    <div class="row">
+                                        <form method="POST" action="/CustomField/Wizard" id="step2Form">
+                                            <input type="hidden" id="CustomObjectId" name="CustomObjectId" />
+                                            <input type="hidden" id="CustomObjectName" name="CustomObjectName" />
+                                            <input type="hidden" id="FieldTypeId" name="FieldTypeId" />
+
+                                            <div class="row specific-section-header">
+
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="form-group">
+                                                    <label for="Name">Name</label><br />
+                                                    <input id="Name" name="Name" class="form-control" type="text" required />
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="Description">Description</label><br />
+                                                    <textarea id="Description" name="Description" class="form-control"></textarea>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="HelpText">Help Text</label><br />
+                                                    <input id="HelpText" name="HelpText" class="form-control" type="text" />
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input id="IsActive" name="IsActive" type="checkbox" checked />
+                                                    <label for="IsActive">Is Active</label>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input id="IsRequired" name="IsRequired" type="checkbox" />
+                                                    <label for="IsRequired">Is required</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="row specific-section">
+
+                                            </div>
+
+                                            <input name="__RequestVerificationToken" type="hidden" value="snkDUXxYjM4U0IYToyJobOdXAG5X-5lNCJSGHRAoRHl2GLGAtdtqtYHR6AwUMR_Ya5BCqkz0zpKKxbQJbVBEFDI3ItOj8FKMgwKWKQ1XayeT6BdLypbVjDKnNVLnP18w5HwnwCcKftxrf-G9x5CVSw2" />
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+                            <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+                            <script src="~/Scripts/app.js"></script>
+</body>
