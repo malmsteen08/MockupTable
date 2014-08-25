@@ -1,10 +1,10 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "TableItems";
 }
 <head>
     <link rel="stylesheet" href="~/Content/css/boot.css" />
     <link rel="stylesheet" href="~/Content/css/_styles.css" />
-    
+
 
 </head>
 <body>
@@ -24,17 +24,12 @@
 
 
                                     <div class="col-md-3">
-                                        <label for="CustomObjects">Object Label</label> <br />
-                                        <input type="hidden" id="CustomObjects" name="CustomObjects"/>
-                                        <select id="CustomObject" class="form-control"></select>
+                                        <label for="CustomObjects">Table Items</label> <br />
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="list-group">
                                                 <br />
-                                                <a class="list-group-item" data-filter="Table">
-                                                    <div class="col-md-2"><input type="radio" name="cfType" data-name="Table" value="1" /> Table</div> <div class="text-danger"><small> Users can insert any character up to 250 characters.</small></div>
-                                                </a>
                                                 <a class="list-group-item" data-filter="Text">
                                                     <div class="col-md-2"><input type="radio" name="cfType" data-name="Text" value="2" /> Text</div> <div class="text-danger"><small> Users can insert any character up to 30000 characters. </small></div>
                                                 </a>
@@ -58,7 +53,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                         </div>
                     </div>
                 </div>
@@ -66,10 +61,10 @@
         </div>
     </div>
 
-        
 
-    
+
+
 
     <script src="~/Scripts/jquery-2.1.1.min.js"></script>
-            <script src="~/Scripts/app.js"></script>
+    <script src="~/Scripts/app.js"></script>
 </body>

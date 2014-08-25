@@ -1,33 +1,54 @@
-﻿$(document).ready(function () {
+﻿$(document).ready(function() {
     var objectNames = [{ "Name": "Teklif" }, { "Name": "Ürün" }];
-    $.each(objectNames, function (key, value) {
+    $.each(objectNames, function(key, value) {
         $('#CustomObject')
             .append($("<option value=" + value.Name + ">" + value.Name + "</option>"))
     });
+});
 
 
-    
-    $('.wizard-next').click(function ()
-    { 
-        var dataToSave = "";
-        $.each($("#CustomObject"), function(index, item) {
-            dataToSave = dataToSave + ", {'Name':'" + $(this).text() + "'} ";
-        });
-        dataToSave = dataToSave.substring(1);
-        $.ajax({
-            type: 'POST',
-            contentType: "application/json",
-            url: "data.json",
-            data: "{ 'screening':[" + dataToSave + "]}",
-            success: function(d) {
-                alert(d.d);
-            },
-            error: function(e, d) {
-            },
-            dataType: "json"
-       });
+$('.wizard-next').click(function sendData() {
 
+    var dataFields = {
+        object: $("#CustomObjects").val(),
+        field: $("//div[@data-name]").val(),
+        name: $("#Name").val(),
+        description : $("#Description").val(),
+        helpText : $("#HelpText").val(),
+        isActive : $("#IsActive").val(),
+        isRequired : $("#IsRequired").val()
+    }
+
+    $.ajax({
+        url: '/Data/data.json',
+        type: 'post',
+        dataType: 'json',
+        success: function(data) {
+            $('#data').html(dataFields);
+        },
+        data: dataFields
     });
+
+});
+
+
+//$('.wizard-next').click(function sendData() {
+    //    $.ajax({
+    //        url: '../Content/Data/data.json',
+    //        type: 'POST',
+    //        contentType: 'application/json',
+    //        data: {
+    //            json: JSON.stringify({
+    //                name: "Bob",
+    //            })
+    //        },
+
+    //        dataType: 'json'
+    //    });
+    //    parseJSON.valueOf(json);
+    //});
+
+
 
 
 
@@ -39,5 +60,5 @@
     //    var inputValue = $('#CustomObject').val();
     //    $('input').val(inputValue);
     //});
-});
+
 

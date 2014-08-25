@@ -6,15 +6,15 @@ using System.Web.Mvc;
 
 namespace MockupCustomTable.Controllers
 {
-    public class HomeController : Controller
+    public class CustomFieldController : Controller
     {
-        public ActionResult Index()
+        //
+        // GET: /CustomField/
+
+        public ActionResult TableItems()
         {
             return View();
         }
-        public ActionResult InsertField()
-        {
-            return View();
-        }
+
     }
 }

@@ -108,11 +108,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\Data\data.json" />
+    <Compile Include="Controllers\CustomFieldController.cs" />
+    <Compile Include="Controllers\CustomObjectController.cs" />
+    <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Views\Data\data.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -162,6 +167,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\data.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CustomObject\Firma.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CustomField\TableItems.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
