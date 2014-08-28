@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "TableFieldList";
+}
+<head>
+    <link rel="stylesheet" href="~/Content/css/boot.css" />
+    <link rel="stylesheet" href="~/Content/css/_styles.css" />
+    
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="label well-sm label-success">
+                        Object :<a class="badge" href="/customfield/list/F9FB397BA7604DA08AB2236C4A16041F">Firma</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Field :<a class="badge" href="/customfield/list/F9FB397BA7604DA08AB2236C4A16041F">Table</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="pull-right btn-group-xs">
+                        <a href="/CustomField/AddTableField" class="btn btn-xs btn-success"><i class="fa fa-file"></i> New</a>
+                    </div>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered table-hover sortable" data-order-update-url="/CustomField/ChangeOrder">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Field Type</th>
+                            <th>Default Value</th>
+                            <th>Help Text</th>
+                            <th>Is required</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-id="8E939E0C64F34ECCAA85CB9CE0554FDE">
+                            <td>
+                                <button data-id="6C50A2BB184343A6B21FA83F275B3146"
+                                        data-delete-post="/customfield/delete"
+                                        data-modal-body-message-url="/customfield/CheckDelete"
+                                        data-async="true"
+                                        data-delete-confirm="true"
+                                        class="btn btn-xs btn-danger btn-delete">
+                                    <i class="fa fa-trash-o"></i> Delete
+                                </button>
+                                <a href="/customfield/edit/6C50A2BB184343A6B21FA83F275B3146" class="btn btn-xs btn-warning"><i class="fa fa-pencil-square-o"></i> Edit</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin: 100px 0 100px 0"></div>
+    <div class="clearfix"></div>
+
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script src="~/Scripts/jquery.cookie.js"></script>
+    <script src="~/Scripts/TableFieldList.js"></script>
+</body>

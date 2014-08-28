@@ -16,5 +16,18 @@ namespace MockupCustomTable.Controllers
             return View();
         }
 
+        public ActionResult TableFieldInsert()
+        {
+            return View();
+        }
+
+        public ActionResult TableFieldList()
+        {
+            return View();
+        }
+        public ActionResult AddTableField()
+        {
+            return View();
+        }
     }
 }

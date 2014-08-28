@@ -124,7 +124,15 @@
     </Compile>
     <Compile Include="Models\Data.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Scripts\AddTableItem.js" />
+    <Content Include="Scripts\CustomObjectFields.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\TableFieldList.js" />
+    <Content Include="Scripts\TableItems.js" />
     <Content Include="Views\Data\data.cshtml" />
+    <Content Include="Views\CustomField\TableFieldInsert.cshtml" />
+    <Content Include="Views\CustomField\TableFieldList.cshtml" />
+    <Content Include="Views\CustomField\AddTableField.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
