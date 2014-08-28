@@ -114,7 +114,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Content\Data\data.json" />
     <Compile Include="Controllers\CustomFieldController.cs" />
     <Compile Include="Controllers\CustomObjectController.cs" />
     <Compile Include="Controllers\DataController.cs" />
@@ -124,6 +123,7 @@
     </Compile>
     <Compile Include="Models\Data.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Scripts\AddTableField.js" />
     <Content Include="Scripts\AddTableItem.js" />
     <Content Include="Scripts\CustomObjectFields.js" />
     <Content Include="Scripts\jquery.cookie.js" />
