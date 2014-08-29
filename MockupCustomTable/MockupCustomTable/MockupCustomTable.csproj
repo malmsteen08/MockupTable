@@ -180,9 +180,6 @@
     <Content Include="Views\Home\InsertField.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\data.json" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\CustomObject\Firma.cshtml" />
   </ItemGroup>
   <ItemGroup>

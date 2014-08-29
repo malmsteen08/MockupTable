@@ -2,70 +2,117 @@
     var objectNames = [{ 'Name': 'Teklif' }, { 'Name': 'Ürün' }];
     $.each(objectNames, function (key, value) {
         $('#CustomObject')
-            .append($('<option value=' + value.Name + '>' + value.Name + '</option>'))
+            .append($('<option value=' + value.Name + '>' + value.Name + '</option>'));
+
+
+        var asd = localStorage.getItem('FirstTableCFName');
+        var array = $.makeArray(asd);
+        console.log(array.length);
+
+
+
+
     });
 });
 
-var customObjectName;
-var customFieldName;
-var name;
-var description;
-var helptext;
+//have index page values
+var tableSecondStepArray = [];
 
-    $('.wizard-next').click(function () {
-        $.cookie('CustomObjectName', $('#CustomObject').val(), { expires: 7 });
-        $.cookie('CustomFieldName', $('[name="cfType"]:checked').data('name'), { expires: 7 });
+$('.wizard-next').click(function () {
+    var tableFirstStepArray = [];
 
-        customObjectName = $('#CustomObject').val();
-        customFieldName = $('[name="cfType"]:checked').data('name');
+    $.cookie('CustomObjectName', $('#CustomObject').val(), { expires: 7 });
+    $.cookie('CustomFieldName', $('[name="cfType"]:checked').data('name'), { expires: 7 });
 
-        $.ajax({
-            url: "Data/data.cshtml",
-            success: function (save) {
-                customObjectName = save;
-            }
-        });
+    tableFirstStepArray.push({ Name: 'Ali', Pass: '123456' });
+    tableFirstStepArray.push({ Name: 'Veli', Pass: '*****' });
 
-    });
+    localStorage.setItem('Users', JSON.stringify(tableFirstStepArray));
+    console.log(JSON.stringify(tableFirstStepArray));
 
-    $('.wizard-next2').click(function () {
-        $.cookie('name', $('#Name').val(), { expires: 7 });
-        $.cookie('description', $('#Description').val(), { expires: 7 });
-        $.cookie('helptext', $('#HelpText').val(), { expires: 7 });
 
-        name = $('#Name').val();
-        description = $('#Description').val();
-        helptext = $('#HelpText').val();
+    var osman = localStorage.getItem('Users');
+    console.log(osman);
 
-        console.log($.cookie('CustomObjectName'));
-    });
+    var veli = JSON.parse(osman);
+    veli.push({ Name: $.cookie('CustomObjectName'), Pass: $.cookie('CustomFieldName') });
+    console.log(JSON.stringify(veli));
 
-//$(function GetData() {
+    localStorage.setItem('Users', veli);
 
-//    var customObjectName = "";
-//    var customFieldName = "";
-//    var name = "";
-//    var description = "";
-//    var helptext = "";
+    //var mistafa = localStorage.getItem('FirstTableCFName');
+    //console.log(mistafa);
 
-//    $('.wizard-next').click(function () {
-//        $.cookie('CustomObjectName', $('#CustomObject').val(), { expires: 7 });
-//        $.cookie('CustomFieldName', $('[name="cfType"]:checked').data('name'), { expires: 7 });
 
-//        customObjectName = $('#CustomObject').val();
-//        customFieldName = $('[name="cfType"]:checked').data('name');
+
+});
+
+$('.wizard-next2').click(function () {
+    $.cookie('name', $('#Name').val(), { expires: 7, path: '/' });
+    $.cookie('description', $('#Description').val(), { expires: 7, path: '/' });
+    $.cookie('helptext', $('#HelpText').val(), { expires: 7, path: '/' });
+
+    tableSecondStepArray.push($.cookie('name'));
+    tableSecondStepArray.push($.cookie('description'));
+    tableSecondStepArray.push($.cookie('helptext'));
+
+    localStorage.setItem('SecondTableFieldName', tableSecondStepArray);
+
+    alert(localStorage.getItem('SecondTableFieldName'));
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//$('.wizard-next').click(function sendData() {
+
+//    var dataFields = {
+//        object: $("#CustomObjects").val(),
+//        field: $("//div[@data-name]").val(),
+//        name: $("#Name").val(),
+//        description : $("#Description").val(),
+//        helpText : $("#HelpText").val(),
+//        isActive : $("#IsActive").val(),
+//        isRequired : $("#IsRequired").val()
+//    }
+
+//    $.ajax({
+//        url: '/Data/data.json',
+//        type: 'post',
+//        dataType: 'json',
+//        success: function(data) {
+//            $('#data').html(dataFields);
+//        },
+//        data: dataFields
 //    });
 
-//    $('.wizard-next2').click(function () {
-//        $.cookie('name', $('#Name').val(), { expires: 7 });
-//        $.cookie('description', $('#Description').val(), { expires: 7 });
-//        $.cookie('helptext', $('#HelpText').val(), { expires: 7 });
+//});
 
-//        name = $('#Name').val();
-//        description = $('#Description').val();
-//        helptext = $('#HelpText').val();
+
+//$('.wizard-next').click(function sendData() {
+//    $.ajax({
+//        url: '../Content/Data/data.json',
+//        type: 'POST',
+//        contentType: 'application/json',
+//        data: {
+//            json: JSON.stringify({
+//                name: "Bob",
+//            })
+//        },
+
+//        dataType: 'json'
 //    });
-
+//    parseJSON.valueOf(json);
 //});
 
 
@@ -75,62 +122,10 @@ var helptext;
 
 
 
-
-
-
-
-    //$('.wizard-next').click(function sendData() {
-
-    //    var dataFields = {
-    //        object: $("#CustomObjects").val(),
-    //        field: $("//div[@data-name]").val(),
-    //        name: $("#Name").val(),
-    //        description : $("#Description").val(),
-    //        helpText : $("#HelpText").val(),
-    //        isActive : $("#IsActive").val(),
-    //        isRequired : $("#IsRequired").val()
-    //    }
-
-    //    $.ajax({
-    //        url: '/Data/data.json',
-    //        type: 'post',
-    //        dataType: 'json',
-    //        success: function(data) {
-    //            $('#data').html(dataFields);
-    //        },
-    //        data: dataFields
-    //    });
-
-    //});
-
-
-    //$('.wizard-next').click(function sendData() {
-    //    $.ajax({
-    //        url: '../Content/Data/data.json',
-    //        type: 'POST',
-    //        contentType: 'application/json',
-    //        data: {
-    //            json: JSON.stringify({
-    //                name: "Bob",
-    //            })
-    //        },
-
-    //        dataType: 'json'
-    //    });
-    //    parseJSON.valueOf(json);
-    //});
-
-
-
-
-
-
-
-
-    //$('.wizard-next').click(function ()
-    //{
-    //    var inputValue = $('#CustomObject').val();
-    //    $('input').val(inputValue);
-    //});
+//$('.wizard-next').click(function ()
+//{
+//    var inputValue = $('#CustomObject').val();
+//    $('input').val(inputValue);
+//});
 
 
