@@ -1,9 +1,25 @@
 ﻿$('.wizard-next').click(function () {
-    $.cookie('AddTableFieldName', $('[name="cfType"]:checked').data('name'), { expires: 7 });
+    var getNumber = localStorage.length / 5;
+
+    if (localStorage.length === 5) {
+        localStorage.setItem('TableField[0]', $('[name="cfType"]:checked').data('name'));
+    }
+    else {
+        localStorage.setItem('TableField[' + getNumber + ']', $('[name="cfType"]:checked').data('name'));
+    }
 });
 
 $('.wizard-next2').click(function () {
-    $.cookie('AddTableName', $('#Name').val(), { expires: 7 });
-    $.cookie('AddTableDescription', $('#Description').val(), { expires: 7 });
-    $.cookie('AddTableHelptext', $('#HelpText').val(), { expires: 7 });
+    var getNumber = localStorage.length / 9;
+
+    if (localStorage.length === 6) {
+        localStorage.setItem('Name[0]', $('#Name').val());
+        localStorage.setItem('Description[0]', $('#Description').val());
+        localStorage.setItem('HelpText[0]', $('#HelpText').val());
+    }
+    else {
+        localStorage.setItem('Name[' + getNumber + ']', $('#Name').val());
+        localStorage.setItem('Description[' + getNumber + ']', $('#Description').val());
+        localStorage.setItem('HelpText[' + getNumber + ']', $('#HelpText').val());
+    }
 });

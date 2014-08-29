@@ -4,61 +4,41 @@
         $('#CustomObject')
             .append($('<option value=' + value.Name + '>' + value.Name + '</option>'));
 
-
         var asd = localStorage.getItem('FirstTableCFName');
         var array = $.makeArray(asd);
         console.log(array.length);
-
-
-
-
     });
 });
 
-//have index page values
-var tableSecondStepArray = [];
-
 $('.wizard-next').click(function () {
-    var tableFirstStepArray = [];
 
-    $.cookie('CustomObjectName', $('#CustomObject').val(), { expires: 7 });
-    $.cookie('CustomFieldName', $('[name="cfType"]:checked').data('name'), { expires: 7 });
+    var getNumber = localStorage.length / 2;
 
-    tableFirstStepArray.push({ Name: 'Ali', Pass: '123456' });
-    tableFirstStepArray.push({ Name: 'Veli', Pass: '*****' });
+    if (localStorage.length === 0) {
+        localStorage.setItem('Object[0]', $('#CustomObject').val());
+        localStorage.setItem('Field[0]', $('[name="cfType"]:checked').data('name'));
+    }
+    else {
 
-    localStorage.setItem('Users', JSON.stringify(tableFirstStepArray));
-    console.log(JSON.stringify(tableFirstStepArray));
-
-
-    var osman = localStorage.getItem('Users');
-    console.log(osman);
-
-    var veli = JSON.parse(osman);
-    veli.push({ Name: $.cookie('CustomObjectName'), Pass: $.cookie('CustomFieldName') });
-    console.log(JSON.stringify(veli));
-
-    localStorage.setItem('Users', veli);
-
-    //var mistafa = localStorage.getItem('FirstTableCFName');
-    //console.log(mistafa);
-
-
-
+        localStorage.setItem('Object[' + getNumber + ']', $('#CustomObject').val());
+        localStorage.setItem('Field[' + getNumber + ']', $('[name="cfType"]:checked').data('name'));
+    }
 });
 
 $('.wizard-next2').click(function () {
-    $.cookie('name', $('#Name').val(), { expires: 7, path: '/' });
-    $.cookie('description', $('#Description').val(), { expires: 7, path: '/' });
-    $.cookie('helptext', $('#HelpText').val(), { expires: 7, path: '/' });
 
-    tableSecondStepArray.push($.cookie('name'));
-    tableSecondStepArray.push($.cookie('description'));
-    tableSecondStepArray.push($.cookie('helptext'));
+    var getNumber = localStorage.length / 5;
 
-    localStorage.setItem('SecondTableFieldName', tableSecondStepArray);
-
-    alert(localStorage.getItem('SecondTableFieldName'));
+    if (localStorage.length === 2) {
+        localStorage.setItem('Name[0]', $('#Name').val());
+        localStorage.setItem('Description[0]', $('#Description').val());
+        localStorage.setItem('HelpText[0]', $('#HelpText').val());
+    }
+    else {
+        localStorage.setItem('Name[' + getNumber + ']', $('#Name').val());
+        localStorage.setItem('Description[' + getNumber + ']', $('#Description').val());
+        localStorage.setItem('HelpText[' + getNumber + ']', $('#HelpText').val());
+    }
 });
 
 
