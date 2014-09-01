@@ -11,34 +11,69 @@
 });
 
 $('.wizard-next').click(function () {
+    
+    var getNumber = localStorage.length;
+    
+    localStorage.setItem('FObject[0]', $('#CustomObject').val());
+    localStorage.setItem('FField[0]', $('[name="cfType"]:checked').data('name'));
 
-    var getNumber = localStorage.length / 2;
+    //var tableFirstStepArray = [];
 
-    if (localStorage.length === 0) {
-        localStorage.setItem('Object[0]', $('#CustomObject').val());
-        localStorage.setItem('Field[0]', $('[name="cfType"]:checked').data('name'));
-    }
-    else {
+    //if (localStorage.length === 0) {
 
-        localStorage.setItem('Object[' + getNumber + ']', $('#CustomObject').val());
-        localStorage.setItem('Field[' + getNumber + ']', $('[name="cfType"]:checked').data('name'));
-    }
+    //    tableFirstStepArray.push({
+    //        i : 1,
+    //        FObject: $('#CustomObject').val(),
+    //        FField: $('[name="cfType"]:checked').data('name')
+    //    });
+        
+    //    localStorage.setItem('FirstData', JSON.stringify(tableFirstStepArray));
+
+        //localStorage.setItem( 'FObject[0]', $('#CustomObject').val());
+        //localStorage.setItem( 'FField[0]', $('[name="cfType"]:checked').data('name'));
+    //}
+    //else {
+
+    //    localStorage.setItem('FObject[' + getNumber + ']', $('#CustomObject').val());
+    //    localStorage.setItem('FField[' + getNumber + ']', $('[name="cfType"]:checked').data('name'));
+    //}
 });
 
 $('.wizard-next2').click(function () {
 
-    var getNumber = localStorage.length / 5;
+    //var getNumber = localStorage.length / 5;
 
-    if (localStorage.length === 2) {
-        localStorage.setItem('Name[0]', $('#Name').val());
-        localStorage.setItem('Description[0]', $('#Description').val());
-        localStorage.setItem('HelpText[0]', $('#HelpText').val());
-    }
-    else {
-        localStorage.setItem('Name[' + getNumber + ']', $('#Name').val());
-        localStorage.setItem('Description[' + getNumber + ']', $('#Description').val());
-        localStorage.setItem('HelpText[' + getNumber + ']', $('#HelpText').val());
-    }
+
+    localStorage.setItem('FName[0]', $('#Name').val());
+    localStorage.setItem('FDescription[0]', $('#Description').val());
+    localStorage.setItem('FHelpText[0]', $('#HelpText').val());
+
+
+    
+    //if (localStorage.length === 1) {
+    //    var push = localStorage.getItem('FirstData');
+
+    //    var pushItem = JSON.parse(push)
+        
+    //    pushItem.push({
+    //        i:1,
+    //        FName: $('#Name').val(),
+    //        FDescription: $('#Description').val(),
+    //        FHelpText: $('#HelpText').val()
+    //    });
+
+
+    //    localStorage.setItem('FirstData', JSON.stringify(pushItem));
+
+        //localStorage.setItem('FName[0]', $('#Name').val());
+        //localStorage.setItem('FDescription[0]', $('#Description').val());
+        //localStorage.setItem('FHelpText[0]', $('#HelpText').val());
+    //}
+    //else {
+    //    localStorage.setItem('FName[' + getNumber + ']', $('#Name').val());
+    //    localStorage.setItem('FDescription[' + getNumber + ']', $('#Description').val());
+    //    localStorage.setItem('FHelpText[' + getNumber + ']', $('#HelpText').val());
+    //}
 });
 
 
